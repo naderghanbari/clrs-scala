@@ -27,8 +27,15 @@ that this project should be used solely for learning more about
 algorithms, Scala, and functional programming and not as a help for
 exercises.
 
+Test
+----
+Tests are written using [ScalaTest](http://www.scalatest.org/).
+Run them with the following command:
+
+    > sbt test
+
 Disclaimer
 ----------
-Tests are intentionally written with no test framework and sample data
-are exactly the same as mentioned in the book.
-
+This project is written simply for learning and educational purposes.
+None of the written data structures and algorithm are properly tested
+against real data.

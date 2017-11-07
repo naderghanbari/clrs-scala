@@ -1,20 +1,19 @@
 package com.clrs.c08
 
-import com.clrs.c01.SortingProblemTest
+import org.scalatest.{Matchers, WordSpec}
 
-object ArrayCountingSortTest extends App {
-  val k = 5
+class ArrayCountingSortTest extends WordSpec with Matchers {
 
-  val a = Array(2, 5, 3, 0, 2, 3, 0, 3)
-  println(a.mkString("[", ", ", "]"))
+  "ArrayCountingSortTest.countingSort" when {
+    "k = 5" should {
+      "return a sorted array" in {
+        val k = 5
+        val input = Array(2, 5, 3, 0, 2, 3, 0, 3)
+        val output = Array.ofDim[Int](input.length)
+        ArrayCountingSort.countingSort(k)(input, output)
+        output shouldBe sorted
+      }
+    }
+  }
 
-  println("-------------------------------")
-  println(s"ARRAY COUNTING SORT ( K = $k )")
-  println("-------------------------------")
-
-  val b = Array.ofDim[Int](a.length)
-  ArrayCountingSort.countingSort(k)(a, b)
-  println(b.mkString("SORTED [", ", ", "]"))
-
-  assert(SortingProblemTest.isSorted(b))
 }

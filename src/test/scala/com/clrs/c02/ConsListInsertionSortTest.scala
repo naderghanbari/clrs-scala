@@ -1,18 +1,13 @@
 package com.clrs.c02
 
-import com.clrs.c01.SortingProblemTest
+import org.scalatest.{FlatSpec, Matchers}
 
-object ConsListInsertionSortTest extends App {
-  val a = List(5, 2, 4, 6, 1, 3)
-  println(a.mkString("INPUT ", " :: ", " :: Nil"))
+class ConsListInsertionSortTest extends FlatSpec with Matchers {
 
+  "ConsListInsertionSort.sort" should "sort an array in place" in {
+    val input = List(5, 2, 4, 6, 1, 3)
+    val output = ConsListInsertionSort.sort(input)
+    output shouldBe sorted
+  }
 
-  println("------------------------")
-  println("CONS LIST INSERTION SORT")
-  println("------------------------")
-
-  val sorted = ConsListInsertionSort.sort(a)
-  println(sorted.mkString("SORTED ", " :: ", " :: Nil"))
-
-  assert(SortingProblemTest.isSorted(sorted))
 }
