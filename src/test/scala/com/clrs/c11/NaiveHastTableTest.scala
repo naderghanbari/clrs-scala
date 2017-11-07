@@ -4,8 +4,9 @@ import com.clrs.common.SatelliteObject
 
 object NaiveHastTableTest extends App {
   val m = 10
-  val h = (k: Int) => k % m
-  val table = new NaiveHashTable[Int, SatelliteObject[Int]](m)(h)
+  implicit val divisionHashFunction = new HashFunction.DivisionHashFunction(m)
+
+  val table = new NaiveHashTable[Int, SatelliteObject[Int]](m)
 
   val twelve = SatelliteObject(12, "Satellite 12")
   val thirteen = SatelliteObject(13, "Satellite 13")

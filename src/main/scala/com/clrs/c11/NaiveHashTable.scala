@@ -13,7 +13,7 @@ import scala.reflect.ClassTag
   * @tparam K Type of keys.
   * @tparam X Type of elements. Must have a key that can be used as index.
   */
-class NaiveHashTable[K, X <: HasKey[K] : ClassTag](m: Int)(h: K => Index) {
+class NaiveHashTable[K, X <: HasKey[K] : ClassTag](m: Int)(implicit h: HashFunction[K, Index]) {
 
   type Entry = Option[X]
   private val T = Array.fill[Entry](m - 1)(None)
