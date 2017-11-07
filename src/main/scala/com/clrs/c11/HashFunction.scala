@@ -36,4 +36,12 @@ object HashFunction {
   }
 
 
+  class MultiplicationMethod(m: Int) extends HashFunction[Int, Int] {
+    assert(m > 1)
+    private val A = 0.6180339887
+    private val modOne = (n: Double) => n - Math.floor(n)
+
+    override def hash(k: Int): Int = (m * modOne(k * A)).toInt
+  }
+
 }
