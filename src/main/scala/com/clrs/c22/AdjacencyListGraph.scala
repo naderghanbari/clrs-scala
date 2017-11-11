@@ -8,7 +8,7 @@ package com.clrs.c22
   *
   * @tparam V Parametric type of vertices.
   */
-trait AdjacencyListGraph[V] extends BreadthFirstSearch[V] {
+trait AdjacencyListGraph[V] {
 
   /**
     * Adjacency function, adj(vi) = { vj | vi -> vj } for directed graph
