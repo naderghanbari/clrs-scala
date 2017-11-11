@@ -8,7 +8,7 @@ package com.clrs.c22
   *
   * @tparam V Parametric type of vertices.
   */
-trait AdjacencyListGraph[V] {
+trait AdjacencyListGraph[V] extends BreadthFirstSearch[V] {
 
   /**
     * Adjacency function, adj(vi) = { vj | vi -> vj } for directed graph
@@ -26,7 +26,7 @@ trait AdjacencyListGraph[V] {
   * @param adj Adjacency list map.
   * @tparam V Parametric type of vertices.
   */
-case class HashMapAdjacencyListGraph[V](adj: V Map List[V]) extends AdjacencyListGraph[V]
+case class HashMapAdjacencyListGraph[V](adj: V Map Seq[V]) extends AdjacencyListGraph[V]
 
 /**
   * A generating adjacency list graph, one which given a vertex generates all its neighbors.
