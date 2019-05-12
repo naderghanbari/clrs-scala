@@ -1,6 +1,7 @@
 package com.clrs.c22
 
 import scala.annotation.tailrec
+import scala.collection.Seq
 import scala.collection.mutable.{ArrayBuffer, Map => MutableHashMap}
 
 object BreadthFirstSearch {
