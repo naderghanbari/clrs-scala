@@ -9,10 +9,7 @@ package com.clrs.apc
 class FractionalBiasedCoin(a: Long, b: Long)(fair: Coin) extends Coin {
   require(0 < a && a < b, "0 < a < b")
 
-  private val bits =
-    LazyList.iterate(a)(_ * 2 % b).takeWhile(_ != 0).map(_ * 2 >= b)
-
-  override def toss(): Boolean =
-    bits.zip(Iterator.continually(fair.toss())).collectFirst { case (x, y) if x == y => x }.getOrElse(false)
-
+  val bits   = LazyList.iterate(a)(_*2 % b).takeWhile(0.!=).map(_*2 >= b)
+  def fairs  = Iterator.continually(fair.toss())
+  def toss() = bits.zip(fairs).find(Function.tupled(_==_)).exists(_._1)
 }
