@@ -1,18 +1,22 @@
 package com.clrs.apc
 
-import org.scalatest.WordSpec
+import org.scalatest.{Matchers, WordSpec}
 
-class FractionalBiasedCoinTest extends WordSpec {
+class FractionalBiasedCoinTest extends WordSpec with Matchers {
 
-  "FractionalBiasedCoin" should {
-    "work properly" in {
-      val (a, b) = (1, 99)
-      val headLover = new FractionalBiasedCoin(a, b)(FairCoin)
-      val n = 100000
-      val sample = List.fill(n)(headLover.toss())
-      val estimate = sample.count(identity)
-      println(estimate * b)
-      println(n * a)
+  "FractionalBiasedCoin" when {
+    "hugely in favor of heads" should {
+
+      val (a, b) = (95, 100)
+      val p      = a / b.toDouble
+
+      "work properly" in {
+        val headLover = new FractionalBiasedCoin(a, b)
+        val n         = 1000000
+        val sample    = (Iterator fill n)(headLover.toss())
+        val heads     = sample count identity
+        heads / n.toDouble shouldEqual p +- (p * (1 - p) / 50)
+      }
     }
   }
 
