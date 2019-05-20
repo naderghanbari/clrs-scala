@@ -9,22 +9,23 @@ import scala.math.Ordering.Implicits.infixOrderingOps
 /** Mutable in-place QuickSort.
   * Chapter 7, Section 7.1, Page 171
   */
-class MutableQuickSort[K: Ordering] extends GenericSort[K, mutable.IndexedSeq] {
+object MutableQuickSort extends GenericSort {
+
+  type C[T] = mutable.IndexedSeq[T]
 
   /** In-place partitioning.
     *
     * @param a Array of n numbers < a₁, a₂, ..., an >
     * @param p Start index.
     * @param r End index.
+    * @return Split point.
     */
-  def partition(a: mutable.IndexedSeq[K], p: Int, r: Int): Int = {
+  def partition[T](a: C[T], p: Int, r: Int)(implicit ord: Ordering[T]): Int = {
     val x = a(r)
     var i = p - 1
-    for (j <- p until r) {
-      if (a(j) <= x) {
-        i += 1
-        swap(a)(i, j)
-      }
+    for (j <- p until r if a(j) <= x) {
+      i = i + 1
+      swap(a)(i, j)
     }
     swap(a)(i + 1, r)
     i + 1
@@ -36,14 +37,14 @@ class MutableQuickSort[K: Ordering] extends GenericSort[K, mutable.IndexedSeq] {
     * @param p Start index.
     * @param r End index.
     */
-  def quickSort(a: mutable.IndexedSeq[K], p: Int, r: Int): Unit =
+  def quickSort[T: Ordering](a: C[T], p: Int, r: Int): Unit =
     if (p < r) {
       val q = partition(a, p, r)
       quickSort(a, p, q - 1)
       quickSort(a, q + 1, r)
     }
 
-  override def sort(input: mutable.IndexedSeq[K]): mutable.IndexedSeq[K] = {
+  def sort[T: Ordering](input: C[T]): C[T] = {
     quickSort(input, 0, input.length - 1)
     input
   }
