@@ -1,20 +1,21 @@
 package com.clrs.c02
 
-import com.clrs.c01.SortingProblem
+import com.clrs.c01.GenericSort
 
-import scala.reflect.ClassTag
+import scala.collection.mutable
 import scala.math.Ordering.Implicits.infixOrderingOps
+import scala.reflect.ClassTag
 
-/** Array in-place Insertion sort
+/** In-place mutable insertion sort.
   * Chapter 2, Section 2.1, Page 18
   */
-object ArrayInsertionSort extends SortingProblem {
+class MutableInsertionSort[K: Ordering: ClassTag] extends GenericSort[K, mutable.IndexedSeq] {
 
   /** In-place indexed (random-access) insertion sort.
     *
     * @param a Array of n numbers < a₁, a₂, ..., an >
     */
-  def insertionSort[Key: Ordering](a: Array[Key]): Unit =
+  def insertionSort(a: mutable.IndexedSeq[K]): Unit =
     for (j <- 1 until a.length) {
       val key = a(j)
       var i   = j - 1
@@ -25,10 +26,9 @@ object ArrayInsertionSort extends SortingProblem {
       a(i + 1) = key
     }
 
-  override def sort[Key: Ordering: ClassTag](input: Seq[Key]): Seq[Key] = {
-    val array = input.toArray
-    insertionSort(array)
-    array
+  override def sort(input: mutable.IndexedSeq[K]): mutable.IndexedSeq[K] = {
+    insertionSort(input)
+    input
   }
 
 }

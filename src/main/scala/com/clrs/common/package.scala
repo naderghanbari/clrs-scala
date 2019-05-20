@@ -1,5 +1,7 @@
 package com.clrs
 
+import scala.collection.mutable
+
 package object common {
 
   /** Type for better code clarity.
@@ -14,7 +16,7 @@ package object common {
     *
     * @param a Array to mutate.
     */
-  def swap[T](a: Array[T])(i: Int, j: Int): Unit = {
+  def swap[T](a: mutable.Seq[T])(i: Int, j: Int): Unit = {
     val temp = a(i)
     a.update(i, a(j))
     a.update(j, temp)
