@@ -4,12 +4,11 @@ import com.clrs.c01.GenericSort
 
 import scala.collection.mutable
 import scala.math.Ordering.Implicits.infixOrderingOps
-import scala.reflect.ClassTag
 
 /** In-place mutable insertion sort.
   * Chapter 2, Section 2.1, Page 18
   */
-class MutableInsertionSort[K: Ordering: ClassTag] extends GenericSort[K, mutable.IndexedSeq] {
+class MutableInsertionSort[K: Ordering] extends GenericSort[K, mutable.IndexedSeq] {
 
   /** In-place indexed (random-access) insertion sort.
     *

@@ -4,13 +4,12 @@ import com.clrs.c01.GenericSort
 import com.clrs.common.swap
 
 import scala.collection.mutable
-import scala.reflect.ClassTag
 import scala.math.Ordering.Implicits.infixOrderingOps
 
 /** Mutable in-place QuickSort.
   * Chapter 7, Section 7.1, Page 171
   */
-class MutableQuickSort[K: Ordering: ClassTag] extends GenericSort[K, mutable.IndexedSeq] {
+class MutableQuickSort[K: Ordering] extends GenericSort[K, mutable.IndexedSeq] {
 
   /** In-place partitioning.
     *
