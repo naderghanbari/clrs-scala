@@ -1,13 +1,7 @@
 package com.clrs.c02
 
-import org.scalatest.{FlatSpec, Matchers}
+import com.clrs.c01.GenericSortTest
 
-class MutableInsertionSortTest extends FlatSpec with Matchers {
+import scala.collection.mutable
 
-  "MutableInsertionSort.sort" should "return a sorted array" in {
-    val input  = Array(5, 2, 4, 6, 1, 3)
-    val output = MutableInsertionSort.sort(input)
-    output shouldBe sorted
-  }
-
-}
+class MutableInsertionSortTest extends GenericSortTest[Int, mutable.IndexedSeq](MutableInsertionSort)

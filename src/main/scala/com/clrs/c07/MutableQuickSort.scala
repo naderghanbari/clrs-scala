@@ -9,9 +9,7 @@ import scala.math.Ordering.Implicits.infixOrderingOps
 /** Mutable in-place QuickSort.
   * Chapter 7, Section 7.1, Page 171
   */
-object MutableQuickSort extends GenericSort {
-
-  type C[T] = mutable.IndexedSeq[T]
+object MutableQuickSort extends GenericSort[mutable.IndexedSeq] {
 
   /** In-place partitioning.
     *
@@ -20,7 +18,7 @@ object MutableQuickSort extends GenericSort {
     * @param r End index.
     * @return Split point.
     */
-  def partition[T](a: C[T], p: Int, r: Int)(implicit ord: Ordering[T]): Int = {
+  def partition[T](a: mutable.IndexedSeq[T], p: Int, r: Int)(implicit ord: Ordering[T]): Int = {
     val x = a(r)
     var i = p - 1
     for (j <- p until r if a(j) <= x) {
@@ -37,14 +35,14 @@ object MutableQuickSort extends GenericSort {
     * @param p Start index.
     * @param r End index.
     */
-  def quickSort[T: Ordering](a: C[T], p: Int, r: Int): Unit =
+  def quickSort[T: Ordering](a: mutable.IndexedSeq[T], p: Int, r: Int): Unit =
     if (p < r) {
       val q = partition(a, p, r)
       quickSort(a, p, q - 1)
       quickSort(a, q + 1, r)
     }
 
-  def sort[T: Ordering](input: C[T]): C[T] = {
+  def sort[T: Ordering](input: mutable.IndexedSeq[T]): mutable.IndexedSeq[T] = {
     quickSort(input, 0, input.length - 1)
     input
   }

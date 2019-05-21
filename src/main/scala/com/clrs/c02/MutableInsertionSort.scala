@@ -8,15 +8,13 @@ import scala.math.Ordering.Implicits.infixOrderingOps
 /** In-place mutable insertion sort.
   * Chapter 2, Section 2.1, Page 18
   */
-object MutableInsertionSort extends GenericSort {
-
-  type C[T] = mutable.IndexedSeq[T]
+object MutableInsertionSort extends GenericSort[mutable.IndexedSeq] {
 
   /** In-place indexed (random-access) insertion sort.
     *
     * @param a Array of n numbers < a₁, a₂, ..., an >
     */
-  def insertionSort[T: Ordering](a: C[T]): Unit =
+  def insertionSort[T: Ordering](a: mutable.IndexedSeq[T]): Unit =
     for (j <- 1 until a.length) {
       val key = a(j)
       var i   = j - 1
@@ -27,7 +25,7 @@ object MutableInsertionSort extends GenericSort {
       a(i + 1) = key
     }
 
-  def sort[T: Ordering](input: C[T]): C[T] = {
+  def sort[T: Ordering](input: mutable.IndexedSeq[T]): mutable.IndexedSeq[T] = {
     insertionSort(input)
     input
   }

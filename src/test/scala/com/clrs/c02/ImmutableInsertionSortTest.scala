@@ -1,13 +1,7 @@
 package com.clrs.c02
 
-import org.scalatest.{FlatSpec, Matchers}
+import com.clrs.c01.GenericSortTest
 
-class ImmutableInsertionSortTest extends FlatSpec with Matchers {
+import scala.collection.immutable.Seq
 
-  "ImmutableInsertionSort.sort" should "sort an array in place" in {
-    val input  = List(5, 2, 4, 6, 1, 3)
-    val output = ImmutableInsertionSort.sort(input)
-    output shouldBe sorted
-  }
-
-}
+class ImmutableInsertionSortTest extends GenericSortTest[Int, Seq](ImmutableInsertionSort)
