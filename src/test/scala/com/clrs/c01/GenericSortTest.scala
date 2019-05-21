@@ -5,12 +5,11 @@ import org.scalatest.enablers.Sortable
 import org.scalatest.{Matchers, PropSpec}
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
-import scala.collection.Iterable
 import scala.language.higherKinds
 
 /** Abstract property-driven tests for sorting classes conforming to GenericSort.
   *
-  * @param alg Sort class, an implementation of GenericSort
+  * @param alg Sort class, an implementation of GenericSort.
   * @tparam T Parametric type of the elements.
   * @tparam C Parametric type of the collection.
   * @param ordering$T$0 Implicit order for elements.

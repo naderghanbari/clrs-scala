@@ -10,11 +10,9 @@ import scala.language.higherKinds
   *
   * Chapter 2, Section 2.1, Exercise 2.1-3, Page 22
   */
-object LinearSeqSearch extends GenericSearch {
+object LinearSeqSearch extends GenericSearch[LinearSeq] {
 
-  override type C[T] = LinearSeq[T]
-
-  override def search[T](a: C[T], v: T): Option[Index] = {
+  def search[T](a: LinearSeq[T], v: T): Option[Index] = {
     var i  = 0
     var xs = a
     while (xs.nonEmpty) {

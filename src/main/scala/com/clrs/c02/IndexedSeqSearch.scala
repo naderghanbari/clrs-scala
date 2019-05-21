@@ -10,11 +10,9 @@ import scala.language.higherKinds
   *
   * Chapter 2, Section 2.1, Exercise 2.1-3, Page 22
   */
-object IndexedSeqSearch extends GenericSearch {
+object IndexedSeqSearch extends GenericSearch[IndexedSeq] {
 
-  override type C[T] = IndexedSeq[T]
-
-  override def search[T](a: C[T], v: T): Option[Index] = {
+  def search[T](a: IndexedSeq[T], v: T): Option[Index] = {
     for (j <- 0 until a.length) if (a(j) == v) return Some(j)
     Option.empty[Index]
   }

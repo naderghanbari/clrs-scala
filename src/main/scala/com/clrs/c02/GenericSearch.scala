@@ -7,10 +7,10 @@ import com.clrs.common.Index
 /** Searching Problem
   *
   * Chapter 2, Section 2.1, Exercise 2.1-3, Page 22
+  *
+  * @tparam C[_] Type of the collection.
   */
-trait GenericSearch {
-
-  type C[T] <: Iterable[T]
+abstract class GenericSearch[C[_] <: Iterable[_]] {
 
   /** A searching problem.
     *

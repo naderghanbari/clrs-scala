@@ -3,6 +3,7 @@ package com.clrs.c01
 import scala.language.higherKinds
 
 /** Sorting problem.
+  *
   * Chapter 1, Section 1.1., page 5
   *
   * Implementations, depending on the mutability or immutability of the collection type,
