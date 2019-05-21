@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/naderghanbari/clrs-scala.svg?branch=master)](https://travis-ci.org/naderghanbari/clrs-scala)
+
 Introduction to Algorithms in Scala
 ===================================
 
