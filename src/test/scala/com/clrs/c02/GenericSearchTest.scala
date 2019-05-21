@@ -4,6 +4,7 @@ import org.scalacheck.Arbitrary
 import org.scalatest.{Matchers, PropSpec}
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
+import scala.collection.{IndexedSeq, LinearSeq}
 import scala.language.higherKinds
 
 /** Abstract property-driven tests for searching classes conforming to GenericSearch.
@@ -20,10 +21,30 @@ abstract class GenericSearchTest[T: Arbitrary, C[_] <: Iterable[_]](alg: Generic
     with Matchers
     with ScalaCheckPropertyChecks {
 
-  property("In range") {
+  property("i ∈ [0, a.length)") {
+    forAll { (a: C[T], x: T) =>
+      val maybeIndex = alg.search(a, x)
+      maybeIndex.forall(a.toIndexedSeq.indices.contains) shouldBe true
+    }
+  }
+
+  property("a(i) = x") {
+    forAll { (a: C[T], x: T) =>
+      val maybeIndex = alg.search(a, x)
+      maybeIndex.map(a.toVector).forall(_ == x) shouldBe true
+    }
+  }
+
+  property("a(j) ≠ x         ∀ j < i") {
     forAll { (x: T, xs: C[T]) =>
-      alg.search(xs, x).forall(idx => idx >= 0 && idx < xs.size) shouldBe true
+      val i = alg.search(xs, x).getOrElse(xs.size)
+      xs.take(i).forall(_ != x) shouldBe true
     }
   }
 
 }
+
+class IndexedSeqIntSearchTest  extends GenericSearchTest[Byte, IndexedSeq](IndexedSeqSearch)
+class IndexedSeqBoolSearchTest extends GenericSearchTest[Boolean, IndexedSeq](IndexedSeqSearch)
+class LinearSeqIntSearchTest   extends GenericSearchTest[Byte, LinearSeq](LinearSeqSearch)
+class LinearSeqBoolSearchTest  extends GenericSearchTest[Boolean, LinearSeq](LinearSeqSearch)
