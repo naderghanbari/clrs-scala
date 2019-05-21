@@ -44,7 +44,7 @@ abstract class GenericSearchTest[T: Arbitrary, C[_] <: Iterable[_]](alg: Generic
 
 }
 
-class IndexedSeqIntSearchTest  extends GenericSearchTest[Byte, IndexedSeq](IndexedSeqSearch)
-class IndexedSeqBoolSearchTest extends GenericSearchTest[Boolean, IndexedSeq](IndexedSeqSearch)
-class LinearSeqIntSearchTest   extends GenericSearchTest[Byte, LinearSeq](LinearSeqSearch)
-class LinearSeqBoolSearchTest  extends GenericSearchTest[Boolean, LinearSeq](LinearSeqSearch)
+class IndexedSeqByteLinearSearchTest    extends GenericSearchTest[Byte, IndexedSeq](IndexedSeqLinearSearch)
+class IndexedSeqBooleanLinearSearchTest extends GenericSearchTest[Boolean, IndexedSeq](IndexedSeqLinearSearch)
+class LinearSeqByteLinearSearchTest     extends GenericSearchTest[Byte, LinearSeq](LinearSeqLinearSearch)
+class LinearSeqBooleanLinearSearchTest  extends GenericSearchTest[Boolean, LinearSeq](LinearSeqLinearSearch)
