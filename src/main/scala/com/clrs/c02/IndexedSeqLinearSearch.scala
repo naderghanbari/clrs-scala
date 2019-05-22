@@ -12,7 +12,10 @@ import scala.collection.IndexedSeq
 object IndexedSeqLinearSearch extends GenericSearch[IndexedSeq] {
 
   def search[T](a: IndexedSeq[T], v: T): Option[Index] = {
-    for (j <- 0 until a.length) if (a(j) == v) return Some(j)
+    (0 until a.length)
+      .withFilter(a(_) == v)
+      .map(Some(_))
+      .foreach(return _)
     Option.empty[Index]
   }
 

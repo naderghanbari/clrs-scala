@@ -13,7 +13,8 @@ object MutableInsertionSort extends GenericSort[mutable.IndexedSeq] {
   /** In-place indexed (random-access) insertion sort.
     *
     * @param a Array of n numbers < a₁, a₂, ..., an >
-    */
+    * @return Sorted sequence.
+    * */
   def insertionSort[T: Ordering](a: mutable.IndexedSeq[T]): Unit =
     for (j <- 1 until a.length) {
       val key = a(j)
