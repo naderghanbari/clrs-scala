@@ -1,6 +1,6 @@
 name         := "clrs-scala"
 version      := "0.1"
-scalaVersion := "2.13.0-RC1"
+scalaVersion := "2.13.0-RC2"
 
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-parallel-collections" % "0.2.0",
