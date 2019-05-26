@@ -12,10 +12,9 @@ import scala.language.higherKinds
   * @param alg Search class, an implementation of GenericSearch with linear search.
   * @tparam T Parametric type of the elements.
   * @tparam C Parametric type of the collection.
-  * @param arbitrary$T$0 Implicit arbitrary for generating random elements.
   * @param arb Implicit arbitrary for generating random sequences of elements.
   */
-abstract class LinearSearchPropertyTest[T: Arbitrary: Ordering, C[_] <: Iterable[_]](alg: GenericSearch[C])(
+abstract class LinearSearchPropertyTest[T: Ordering: Arbitrary, C[_] <: Iterable[_]](alg: GenericSearch[C])(
   implicit arb: Arbitrary[C[T]]
 ) extends PropSpec
     with Matchers

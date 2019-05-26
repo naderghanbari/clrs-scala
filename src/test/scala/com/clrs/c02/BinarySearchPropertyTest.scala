@@ -11,12 +11,9 @@ import scala.language.higherKinds
   *
   * @param alg Search class, an implementation of GenericSearch with binary search.
   * @tparam T Parametric type of the elements.
-  * @param arbitrary$T$0 Implicit arbitrary for generating random elements.
-  * @param arb Implicit arbitrary for generating random sequences of elements.
   */
-abstract class BinarySearchPropertyTest[T: Arbitrary: Ordering](alg: GenericSearch[IndexedSeq])(
-  implicit arb: Arbitrary[IndexedSeq[T]]
-) extends PropSpec
+abstract class BinarySearchPropertyTest[T: Ordering: Arbitrary](alg: GenericSearch[IndexedSeq])
+    extends PropSpec
     with Matchers
     with OptionValues
     with ScalaCheckPropertyChecks {
@@ -45,16 +42,7 @@ abstract class BinarySearchPropertyTest[T: Arbitrary: Ordering](alg: GenericSear
     }
   }
 
-  property("Singleton sequence") {
-    forAll { x: T =>
-      val a     = IndexedSeq(x)
-      val index = alg.search(a, x)
-      index       shouldBe 'defined
-      index.value shouldBe 0
-    }
-  }
-
 }
 
-class ByteBinarySearchTest extends BinarySearchPropertyTest[Byte](BinarySearch)
-//class BooleanBinarySearchTest extends BinarySearchPropertyTest[Boolean](BinarySearch)
+class ByteBinarySearchTest    extends BinarySearchPropertyTest[Byte](BinarySearch)
+class BooleanBinarySearchTest extends BinarySearchPropertyTest[Boolean](BinarySearch)
