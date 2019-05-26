@@ -15,9 +15,8 @@ import scala.language.higherKinds
   * @param arbitrary$T$0 Implicit arbitrary for generating random elements.
   * @param arb Implicit arbitrary for generating random sequences of elements.
   */
-abstract class LinearSearchTest[T: Arbitrary, C[_] <: Iterable[_]](alg: GenericSearch[C])(
-  implicit arb: Arbitrary[C[T]],
-  ord: Ordering[T]
+abstract class LinearSearchPropertyTest[T: Arbitrary: Ordering, C[_] <: Iterable[_]](alg: GenericSearch[C])(
+  implicit arb: Arbitrary[C[T]]
 ) extends PropSpec
     with Matchers
     with ScalaCheckPropertyChecks {
@@ -45,7 +44,7 @@ abstract class LinearSearchTest[T: Arbitrary, C[_] <: Iterable[_]](alg: GenericS
 
 }
 
-class IndexedSeqByteLinearSearchTest    extends LinearSearchTest[Byte, IndexedSeq](IndexedSeqLinearSearch)
-class IndexedSeqBooleanLinearSearchTest extends LinearSearchTest[Boolean, IndexedSeq](IndexedSeqLinearSearch)
-class LinearSeqByteLinearSearchTest     extends LinearSearchTest[Byte, LinearSeq](LinearSeqLinearSearch)
-class LinearSeqBooleanLinearSearchTest  extends LinearSearchTest[Boolean, LinearSeq](LinearSeqLinearSearch)
+class IndexedSeqByteLinearSearchTest    extends LinearSearchPropertyTest[Byte, IndexedSeq](IndexedSeqLinearSearch)
+class IndexedSeqBooleanLinearSearchTest extends LinearSearchPropertyTest[Boolean, IndexedSeq](IndexedSeqLinearSearch)
+class LinearSeqByteLinearSearchTest     extends LinearSearchPropertyTest[Byte, LinearSeq](LinearSeqLinearSearch)
+class LinearSeqBooleanLinearSearchTest  extends LinearSearchPropertyTest[Boolean, LinearSeq](LinearSeqLinearSearch)
