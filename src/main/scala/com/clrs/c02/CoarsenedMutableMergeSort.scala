@@ -24,7 +24,7 @@ class CoarsenedMutableMergeSort(k: Int) extends GenericSort[mutable.IndexedSeq] 
     */
   def mergeSort[T: Ordering](a: mutable.IndexedSeq[T], p: Index, r: Index): Unit =
     if (p < r)
-      if (r - p + 1 > k) {
+      if (r - p + 1 >= k) {
         val q = (p + r) / 2
         mergeSort(a, p, q)
         mergeSort(a, q + 1, r)

@@ -4,4 +4,4 @@ import com.clrs.c01.SortPropertyTest
 
 import scala.collection.mutable
 
-class CoarsenedMutableMergeSortTest extends SortPropertyTest[Int, mutable.IndexedSeq](new CoarsenedMutableMergeSort(2))
+class CoarsenedMutableMergeSortTest extends SortPropertyTest[Int, mutable.IndexedSeq](new CoarsenedMutableMergeSort(4))
