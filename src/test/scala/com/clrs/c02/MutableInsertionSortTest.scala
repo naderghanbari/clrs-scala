@@ -1,7 +1,7 @@
 package com.clrs.c02
 
-import com.clrs.c01.GenericSortTest
+import com.clrs.c01.SortPropertyTest
 
 import scala.collection.mutable
 
-class MutableInsertionSortTest extends GenericSortTest[Int, mutable.IndexedSeq](MutableInsertionSort)
+class MutableInsertionSortTest extends SortPropertyTest[Int, mutable.IndexedSeq](MutableInsertionSort)

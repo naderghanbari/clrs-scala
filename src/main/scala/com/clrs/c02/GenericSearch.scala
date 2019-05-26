@@ -16,9 +16,9 @@ abstract class GenericSearch[C[_] <: Iterable[_]] {
     *
     * @param a A sequence of n numbers < a₁, a₂, ..., an >.
     * @param v Value to search for.
-    * @tparam T Type of elements.
+    * @tparam T Type of elements with a defined ordering.
     * @return An index i such that v = A[i] or `None` if v does not appear in A.
     */
-  def search[T](a: C[T], v: T): Option[Index]
+  def search[T: Ordering](a: C[T], v: T): Option[Index]
 
 }

@@ -16,7 +16,7 @@ import scala.language.higherKinds
   * @param arb Implicit arbitrary for generating random sequences of elements.
   * @param sortable Implicit enabler for ScalaTest's `sorted` matcher.
   */
-abstract class GenericSortTest[T: Ordering, C[_] <: Iterable[_]](alg: GenericSort[C])(
+abstract class SortPropertyTest[T: Ordering, C[_] <: Iterable[_]](alg: GenericSort[C])(
   implicit arb: Arbitrary[C[T]],
   sortable: Sortable[C[T]]
 ) extends PropSpec

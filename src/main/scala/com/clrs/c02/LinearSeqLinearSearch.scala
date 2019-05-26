@@ -11,7 +11,7 @@ import scala.collection.LinearSeq
   */
 object LinearSeqLinearSearch extends GenericSearch[LinearSeq] {
 
-  def search[T](a: LinearSeq[T], v: T): Option[Index] = {
+  def search[T: Ordering](a: LinearSeq[T], v: T): Option[Index] = {
     var i  = 0
     var xs = a
     while (xs.nonEmpty) {

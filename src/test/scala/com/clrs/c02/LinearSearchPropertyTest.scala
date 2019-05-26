@@ -7,16 +7,17 @@ import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 import scala.collection.{IndexedSeq, LinearSeq}
 import scala.language.higherKinds
 
-/** Abstract property-driven tests for searching classes conforming to GenericSearch.
+/** Abstract property-driven tests for linear searches classes conforming to GenericSearch.
   *
-  * @param alg Search class, an implementation of GenericSearch.
+  * @param alg Search class, an implementation of GenericSearch with linear search.
   * @tparam T Parametric type of the elements.
   * @tparam C Parametric type of the collection.
   * @param arbitrary$T$0 Implicit arbitrary for generating random elements.
   * @param arb Implicit arbitrary for generating random sequences of elements.
   */
-abstract class GenericSearchTest[T: Arbitrary, C[_] <: Iterable[_]](alg: GenericSearch[C])(
-  implicit arb: Arbitrary[C[T]]
+abstract class LinearSearchTest[T: Arbitrary, C[_] <: Iterable[_]](alg: GenericSearch[C])(
+  implicit arb: Arbitrary[C[T]],
+  ord: Ordering[T]
 ) extends PropSpec
     with Matchers
     with ScalaCheckPropertyChecks {
@@ -44,7 +45,7 @@ abstract class GenericSearchTest[T: Arbitrary, C[_] <: Iterable[_]](alg: Generic
 
 }
 
-class IndexedSeqByteLinearSearchTest    extends GenericSearchTest[Byte, IndexedSeq](IndexedSeqLinearSearch)
-class IndexedSeqBooleanLinearSearchTest extends GenericSearchTest[Boolean, IndexedSeq](IndexedSeqLinearSearch)
-class LinearSeqByteLinearSearchTest     extends GenericSearchTest[Byte, LinearSeq](LinearSeqLinearSearch)
-class LinearSeqBooleanLinearSearchTest  extends GenericSearchTest[Boolean, LinearSeq](LinearSeqLinearSearch)
+class IndexedSeqByteLinearSearchTest    extends LinearSearchTest[Byte, IndexedSeq](IndexedSeqLinearSearch)
+class IndexedSeqBooleanLinearSearchTest extends LinearSearchTest[Boolean, IndexedSeq](IndexedSeqLinearSearch)
+class LinearSeqByteLinearSearchTest     extends LinearSearchTest[Byte, LinearSeq](LinearSeqLinearSearch)
+class LinearSeqBooleanLinearSearchTest  extends LinearSearchTest[Boolean, LinearSeq](LinearSeqLinearSearch)

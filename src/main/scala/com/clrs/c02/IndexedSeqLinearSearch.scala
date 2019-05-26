@@ -11,7 +11,7 @@ import scala.collection.IndexedSeq
   */
 object IndexedSeqLinearSearch extends GenericSearch[IndexedSeq] {
 
-  def search[T](a: IndexedSeq[T], v: T): Option[Index] = {
+  def search[T: Ordering](a: IndexedSeq[T], v: T): Option[Index] = {
     (0 until a.length)
       .withFilter(a(_) == v)
       .map(Some(_))
