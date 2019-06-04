@@ -1,6 +1,6 @@
 package com.clrs.c02
 
-import com.clrs.c01.GenericSort
+import com.clrs.c01.Sort
 import com.clrs.common
 
 import scala.collection.mutable
@@ -9,7 +9,7 @@ import scala.math.Ordering.Implicits.infixOrderingOps
 /** In-place mutable bubble sort.
   * Chapter 2, Problem 2-2, Page 40
   */
-object MutableBubbleSort extends GenericSort[mutable.IndexedSeq] {
+object MutableBubbleSort extends Sort[mutable.IndexedSeq] {
 
   /** In-place indexed (random-access) bubble sort.
     *

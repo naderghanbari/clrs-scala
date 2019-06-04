@@ -14,7 +14,7 @@ import scala.language.higherKinds
   *
   * @tparam C[_] Type of the collection.
   */
-abstract class GenericSort[C[_] <: Iterable[_]] {
+abstract class Sort[C[_] <: Iterable[_]] {
 
   /** Sorts the given input and returns the sorted permutation.
     *

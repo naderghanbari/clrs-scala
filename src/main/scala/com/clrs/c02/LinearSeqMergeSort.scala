@@ -1,6 +1,6 @@
 package com.clrs.c02
 
-import com.clrs.c01.GenericSort
+import com.clrs.c01.Sort
 
 import scala.annotation.tailrec
 import scala.collection.LinearSeq
@@ -12,7 +12,7 @@ import scala.math.Ordering.Implicits.infixOrderingOps
   * Works for both mutable and immutable LinearSeq collections.
   * Avoids reversing by reversing the order of merge in each iteration.
   */
-object LinearSeqMergeSort extends GenericSort[LinearSeq] {
+object LinearSeqMergeSort extends Sort[LinearSeq] {
 
   /** Directional merge for LinearSeq collections with efficient
     * `head`, `tail` and `prepend` operations.

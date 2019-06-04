@@ -1,6 +1,6 @@
 package com.clrs.c02
 
-import com.clrs.c01.GenericSort
+import com.clrs.c01.Sort
 
 import scala.collection.mutable
 
@@ -9,7 +9,7 @@ import scala.collection.mutable
   *
   * Runs in O(n lgn lgn) with no auxiliary space needed.
   */
-object InPlaceMutableMergeSort extends GenericSort[mutable.IndexedSeq] with InPlaceMutableMerge {
+object InPlaceMutableMergeSort extends Sort[mutable.IndexedSeq] with InPlaceMutableMerge {
 
   /** Random-access mutable merge sort.
     *

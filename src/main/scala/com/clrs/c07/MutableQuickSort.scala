@@ -1,6 +1,6 @@
 package com.clrs.c07
 
-import com.clrs.c01.GenericSort
+import com.clrs.c01.Sort
 import com.clrs.common.swap
 
 import scala.collection.mutable
@@ -9,7 +9,7 @@ import scala.math.Ordering.Implicits.infixOrderingOps
 /** Mutable in-place QuickSort.
   * Chapter 7, Section 7.1, Page 171
   */
-object MutableQuickSort extends GenericSort[mutable.IndexedSeq] {
+object MutableQuickSort extends Sort[mutable.IndexedSeq] {
 
   /** In-place partitioning.
     *

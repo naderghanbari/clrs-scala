@@ -1,6 +1,6 @@
 package com.clrs.c02
 
-import com.clrs.c01.GenericSort
+import com.clrs.c01.Sort
 import com.clrs.common.Index
 
 import scala.collection.mutable
@@ -9,7 +9,7 @@ import scala.math.Ordering.Implicits.infixOrderingOps
 /** In-place mutable insertion sort.
   * Chapter 2, Section 2.1, Page 18
   */
-object MutableInsertionSort extends GenericSort[mutable.IndexedSeq] {
+object MutableInsertionSort extends Sort[mutable.IndexedSeq] {
 
   /** In-place indexed (random-access) insertion sort.
     *

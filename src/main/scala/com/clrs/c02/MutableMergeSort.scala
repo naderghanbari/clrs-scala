@@ -1,13 +1,13 @@
 package com.clrs.c02
 
-import com.clrs.c01.GenericSort
+import com.clrs.c01.Sort
 
 import scala.collection.mutable
 
 /** Mutable MergeSort.
   * Chapter 2, Section 2.3, Pages 31 to 34
   */
-object MutableMergeSort extends GenericSort[mutable.IndexedSeq] with MutableMerge {
+object MutableMergeSort extends Sort[mutable.IndexedSeq] with MutableMerge {
 
   /** Random-access mutable merge sort.
     *
