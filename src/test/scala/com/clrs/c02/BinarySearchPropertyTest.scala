@@ -7,12 +7,12 @@ import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 import scala.collection.IndexedSeq
 import scala.language.higherKinds
 
-/** Abstract property-driven tests for binary searches classes conforming to GenericSearch.
+/** Abstract property-driven tests for binary searches classes conforming to Search.
   *
-  * @param alg Search class, an implementation of GenericSearch with binary search.
+  * @param alg Search class, an implementation of Search with binary search.
   * @tparam T Parametric type of the elements.
   */
-abstract class BinarySearchPropertyTest[T: Ordering: Arbitrary](alg: GenericSearch[IndexedSeq])
+abstract class BinarySearchPropertyTest[T: Ordering: Arbitrary](alg: Search[IndexedSeq])
     extends PropSpec
     with Matchers
     with OptionValues

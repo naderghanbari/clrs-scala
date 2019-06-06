@@ -9,7 +9,7 @@ import scala.collection.IndexedSeq
   *
   * Chapter 2, Section 2.1, Exercise 2.1-3, Page 22
   */
-object IndexedSeqLinearSearch extends GenericSearch[IndexedSeq] {
+object IndexedSeqLinearSearch extends Search[IndexedSeq] {
 
   def search[T: Ordering](a: IndexedSeq[T], v: T): Option[Index] = {
     (0 until a.length)

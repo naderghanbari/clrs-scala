@@ -10,7 +10,7 @@ import com.clrs.common.Index
   *
   * @tparam C[_] Type of the collection.
   */
-abstract class GenericSearch[C[_] <: Iterable[_]] {
+abstract class Search[C[_] <: Iterable[_]] {
 
   /** A searching problem.
     *

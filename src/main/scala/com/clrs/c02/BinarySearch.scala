@@ -18,7 +18,7 @@ import scala.math.Ordering.Implicits.infixOrderingOps
   *
   * Chapter 2, Section 2.3, Exercise 2.3-5, Page 39
   */
-object BinarySearch extends GenericSearch[IndexedSeq] {
+object BinarySearch extends Search[IndexedSeq] {
 
   def binarySearch[T: Ordering](a: IndexedSeq[T], v: T): Option[Index] = {
     @tailrec def rec(l: Index, h: Index): Option[Int] =

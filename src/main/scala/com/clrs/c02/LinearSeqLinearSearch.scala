@@ -9,7 +9,7 @@ import scala.collection.LinearSeq
   *
   * Chapter 2, Section 2.1, Exercise 2.1-3, Page 22
   */
-object LinearSeqLinearSearch extends GenericSearch[LinearSeq] {
+object LinearSeqLinearSearch extends Search[LinearSeq] {
 
   def search[T: Ordering](a: LinearSeq[T], v: T): Option[Index] = {
     var i  = 0

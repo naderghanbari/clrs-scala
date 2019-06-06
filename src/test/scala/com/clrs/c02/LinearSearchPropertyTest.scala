@@ -7,14 +7,14 @@ import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 import scala.collection.{IndexedSeq, LinearSeq}
 import scala.language.higherKinds
 
-/** Abstract property-driven tests for linear searches classes conforming to GenericSearch.
+/** Abstract property-driven tests for linear searches classes conforming to Search.
   *
-  * @param alg Search class, an implementation of GenericSearch with linear search.
+  * @param alg Search class, an implementation of Search with linear search.
   * @tparam T Parametric type of the elements.
   * @tparam C Parametric type of the collection.
   * @param arb Implicit arbitrary for generating random sequences of elements.
   */
-abstract class LinearSearchPropertyTest[T: Ordering: Arbitrary, C[_] <: Iterable[_]](alg: GenericSearch[C])(
+abstract class LinearSearchPropertyTest[T: Ordering: Arbitrary, C[_] <: Iterable[_]](alg: Search[C])(
   implicit arb: Arbitrary[C[T]]
 ) extends PropSpec
     with Matchers

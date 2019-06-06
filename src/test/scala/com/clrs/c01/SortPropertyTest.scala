@@ -7,9 +7,9 @@ import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
 import scala.language.higherKinds
 
-/** Abstract property-driven tests for sorting classes conforming to GenericSort.
+/** Abstract property-driven tests for sorting classes conforming to Sort.
   *
-  * @param alg Sort class, an implementation of GenericSort.
+  * @param alg Sort class, an implementation of Sort.
   * @tparam T Parametric type of the elements.
   * @tparam C Parametric type of the collection.
   * @param ordering$T$0 Implicit order for elements.
