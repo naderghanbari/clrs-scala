@@ -21,37 +21,25 @@ abstract class MaxSubSeqPropertyTest(alg: MaxSubSeq)
     alg.maxSubSeq(IndexedSeq.empty[Int]) shouldBe None
   }
 
-  property("Returns a zero sum for singleton arrays") {
+  property("Works for a simple array") {
+    val a = Vector(13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, -15, -4, 7)
+    alg.maxSubSeq(a).value shouldBe SubSequence(7, 10, 43)
+  }
+
+  property("Returns the whole array as sub-sequence for singleton arrays") {
     forAll(Gen.containerOfN[Array, BigInt](1, arbitrary[BigInt])) { a =>
       val result = alg.maxSubSeq(a).value
-      result.diff(a) shouldBe 0
-      result.start   shouldBe 0
-      result.end     shouldBe 0
+      result.start shouldBe 0
+      result.end   shouldBe 0
+      result.sum   shouldBe a.head
     }
   }
 
-  property("Always returns a non-negative sum for non-empty integer arrays") {
-    forAll(Gen.nonEmptyContainerOf[Array, BigInt](arbitrary[BigInt])) { a =>
-      alg.maxSubSeq(a).value.diff(a) >= 0 shouldBe true
-    }
-  }
-
-  property("Max sub-array of sorted distinct array spans the whole array") {
-    forAll(Gen.nonEmptyContainerOf[Set, BigInt](arbitrary[BigInt])) { set =>
-      val vec    = set.toVector.sorted
+  property("Max sub-array of positive integers spans the whole array") {
+    forAll(Gen.nonEmptyContainerOf[Vector, Long](Gen.chooseNum(1L, 100L))) { vec =>
       val result = alg.maxSubSeq(vec).value
       result.start shouldBe 0
       result.end   shouldBe vec.indices.last
-    }
-  }
-
-  property("Max sub-array of reverse sorted distinct array has a zero sum") {
-    forAll(Gen.nonEmptyContainerOf[Set, BigInt](arbitrary[BigInt])) { set =>
-      val vec    = set.toVector.sorted.reverse
-      val result = alg.maxSubSeq(vec).value
-      result.diff(vec) shouldBe 0
-      result.start     shouldBe 0
-      result.end       shouldBe 0
     }
   }
 
