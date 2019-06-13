@@ -8,13 +8,7 @@ import scala.math.Numeric.Implicits.infixNumericOps
   */
 object BruteForceMaxSubSeq extends MaxSubSeq {
 
-  /** Finds the maximum sub-sequence by checking all 2-combinations of the indices.
-    *
-    * @param a Input sequence.
-    * @tparam T Parametric type of elements (numeric).
-    * @return Maximum sub-sequence.
-    */
-  def maxSubSeq[T: Numeric](a: collection.IndexedSeq[T]): Option[SubSequence[T]] = {
+  def maxSubSeq[T: Numeric](a: Arr[T]): Option[SubSequence[T]] = {
     if (a.isEmpty)
       Option.empty[SubSequence[T]]
     else {

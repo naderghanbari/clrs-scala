@@ -9,6 +9,8 @@ import scala.language.higherKinds
   */
 trait MaxSubSeq {
 
+  type Arr[T] = collection.IndexedSeq[T]
+
   /** Finds the maximum sub-sequence,
     * that is the sub-sequence with maximum sum.
     *
@@ -16,6 +18,6 @@ trait MaxSubSeq {
     * @tparam T Parametric type of elements (numeric).
     * @return Maximum sub-sequence if any.
     */
-  def maxSubSeq[T: Numeric](a: collection.IndexedSeq[T]): Option[SubSequence[T]]
+  def maxSubSeq[T: Numeric](a: Arr[T]): Option[SubSequence[T]]
 
 }
