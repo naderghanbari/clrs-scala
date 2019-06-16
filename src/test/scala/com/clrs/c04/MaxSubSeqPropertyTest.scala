@@ -44,3 +44,7 @@ abstract class MaxSubSeqPropertyTest(alg: MaxSubSeq)
   }
 
 }
+
+class BruteForceMaxSubSeqTest    extends MaxSubSeqPropertyTest(BruteForceMaxSubSeq)
+class DivideConquerMaxSubSeqTest extends MaxSubSeqPropertyTest(DivideConquerMaxSubSeq)
+class KadaneMaxSubSeqTest        extends MaxSubSeqPropertyTest(KadaneMaxSubSeq)
