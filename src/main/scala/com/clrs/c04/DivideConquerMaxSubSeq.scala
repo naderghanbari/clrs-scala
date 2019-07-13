@@ -2,6 +2,7 @@ package com.clrs.c04
 
 import com.clrs.common.Index
 
+import scala.collection.IndexedSeq
 import scala.math.Numeric.Implicits.infixNumericOps
 import scala.math.Ordering.Implicits.infixOrderingOps
 
@@ -10,11 +11,11 @@ import scala.math.Ordering.Implicits.infixOrderingOps
   */
 object DivideConquerMaxSubSeq extends MaxSubSeq {
 
-  def maxSubSeq[T: Numeric](a: Arr[T]): Option[SubSequence[T]] =
+  def maxSubSeq[T: Numeric](a: IndexedSeq[T]): Option[SubSequence[T]] =
     if (a.isEmpty) Option.empty[SubSequence[T]]
     else Some(findMax(a, 0, a.length - 1))
 
-  private def findMax[T: Numeric](a: Arr[T], low: Index, high: Index): SubSequence[T] =
+  private def findMax[T: Numeric](a: IndexedSeq[T], low: Index, high: Index): SubSequence[T] =
     if (low == high)
       SubSequence(low, high, a(low))
     else {
@@ -26,7 +27,9 @@ object DivideConquerMaxSubSeq extends MaxSubSeq {
       else right
     }
 
-  private def findMaxCrossing[T](a: Arr[T], l: Index, m: Index, h: Index)(implicit num: Numeric[T]): SubSequence[T] = {
+  private def findMaxCrossing[T](a: IndexedSeq[T], l: Index, m: Index, h: Index)(
+    implicit num: Numeric[T]
+  ): SubSequence[T] = {
     val rollingMax   = (range: Range) => range.view.map(a).scan(num.zero)(_ + _).drop(1).zipWithIndex.maxBy(_._1)
     val (lSum, lMax) = rollingMax(m to l by -1)
     val (rSum, rMax) = rollingMax(m + 1 to h)

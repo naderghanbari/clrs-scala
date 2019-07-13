@@ -1,5 +1,6 @@
 package com.clrs.c04
 
+import scala.collection.IndexedSeq
 import scala.math.Numeric.Implicits.infixNumericOps
 import scala.math.Ordering.Implicits.infixOrderingOps
 
@@ -8,7 +9,7 @@ import scala.math.Ordering.Implicits.infixOrderingOps
   */
 object KadaneMaxSubSeq extends MaxSubSeq {
 
-  def maxSubSeq[T: Numeric](a: Arr[T]): Option[SubSequence[T]] = {
+  def maxSubSeq[T: Numeric](a: IndexedSeq[T]): Option[SubSequence[T]] = {
     val zero = implicitly[Numeric[T]].zero
     a.view.zipWithIndex
       .scanLeft(SubSequence(-1, -1, zero)) {

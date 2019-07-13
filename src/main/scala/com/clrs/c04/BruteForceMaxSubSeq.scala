@@ -1,5 +1,6 @@
 package com.clrs.c04
 
+import scala.collection.IndexedSeq
 import scala.math.Ordering.Implicits.infixOrderingOps
 import scala.math.Numeric.Implicits.infixNumericOps
 
@@ -8,7 +9,7 @@ import scala.math.Numeric.Implicits.infixNumericOps
   */
 object BruteForceMaxSubSeq extends MaxSubSeq {
 
-  def maxSubSeq[T: Numeric](a: Arr[T]): Option[SubSequence[T]] = {
+  def maxSubSeq[T: Numeric](a: IndexedSeq[T]): Option[SubSequence[T]] = {
     if (a.isEmpty)
       Option.empty[SubSequence[T]]
     else {
