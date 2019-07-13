@@ -1,9 +1,10 @@
 package com.clrs.c22
 
 import com.clrs.common.SatelliteObject
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.Matchers
+import org.scalatest.flatspec.AnyFlatSpec
 
-class BreadthFirstSearchTest extends FlatSpec with Matchers {
+class BreadthFirstSearchTest extends AnyFlatSpec with Matchers {
 
   val A = SatelliteObject("A", "Node A")
   val B = SatelliteObject("B", "Node B")

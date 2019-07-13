@@ -1,7 +1,8 @@
 package com.clrs.c02
 
 import com.clrs.c02.InversionCount.inversionCount
-import org.scalatest.{Matchers, PropSpec}
+import org.scalatest.Matchers
+import org.scalatest.propspec.AnyPropSpec
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
 import scala.language.higherKinds
@@ -9,7 +10,7 @@ import scala.language.higherKinds
 /** Inversion count tests.
   * Chapter 2, Problem 2.4, Parts a and b, Pages 41, 42
   */
-class InversionCountTest extends PropSpec with Matchers with ScalaCheckPropertyChecks {
+class InversionCountTest extends AnyPropSpec with Matchers with ScalaCheckPropertyChecks {
 
   property("[2, 3, 8, 6, 1] has 5 inversions") {
     inversionCount(Array(2, 3, 8, 6, 1)) shouldBe 5

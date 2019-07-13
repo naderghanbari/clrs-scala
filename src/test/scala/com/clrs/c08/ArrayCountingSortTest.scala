@@ -1,8 +1,9 @@
 package com.clrs.c08
 
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.Matchers
+import org.scalatest.wordspec.AnyWordSpec
 
-class ArrayCountingSortTest extends WordSpec with Matchers {
+class ArrayCountingSortTest extends AnyWordSpec with Matchers {
 
   "ArrayCountingSortTest.countingSort" when {
     "k = 5" should {

@@ -1,10 +1,9 @@
 package com.clrs.c08
 
-/**
-  * Counting sort
+/** Counting sort
   * Chapter 8, Section 8.2, Page 195
   *
-  * @author Nader Hadji Ghanbari
+  * @author Nader Ghanbari
   */
 object ArrayCountingSort {
 

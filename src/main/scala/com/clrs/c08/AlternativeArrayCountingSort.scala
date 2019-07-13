@@ -9,7 +9,7 @@ import scala.reflect.ClassTag
   * Stable counting sort using an auxiliary array of arrays, hence supporting satellite data.
   * As mentioned in lecture 7 of 6.006 Introduction to Algorithms, Fall 2011.
   *
-  * @author Nader Hadji Ghanbari
+  * @author Nader Ghanbari
   */
 object AlternativeArrayCountingSort {
 

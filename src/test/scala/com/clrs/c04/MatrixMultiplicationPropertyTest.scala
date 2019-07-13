@@ -2,13 +2,14 @@ package com.clrs.c04
 
 import com.clrs.common.matrix.SquareMatrix
 import org.scalacheck.{Arbitrary, Gen}
-import org.scalatest.{Matchers, OptionValues, PropSpec}
+import org.scalatest.propspec.AnyPropSpec
+import org.scalatest.{Matchers, OptionValues}
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
 import scala.reflect.ClassTag
 
 abstract class MatrixMultiplicationPropertyTest(alg: MatrixMultiplication)
-    extends PropSpec
+    extends AnyPropSpec
     with Matchers
     with ScalaCheckPropertyChecks
     with OptionValues {

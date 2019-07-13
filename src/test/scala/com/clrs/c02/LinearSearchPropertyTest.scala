@@ -1,7 +1,8 @@
 package com.clrs.c02
 
 import org.scalacheck.Arbitrary
-import org.scalatest.{Matchers, PropSpec}
+import org.scalatest.Matchers
+import org.scalatest.propspec.AnyPropSpec
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
 import scala.collection.{IndexedSeq, LinearSeq}
@@ -16,7 +17,7 @@ import scala.language.higherKinds
   */
 abstract class LinearSearchPropertyTest[T: Ordering: Arbitrary, C[_] <: Iterable[_]](alg: Search[C])(
   implicit arb: Arbitrary[C[T]]
-) extends PropSpec
+) extends AnyPropSpec
     with Matchers
     with ScalaCheckPropertyChecks {
 

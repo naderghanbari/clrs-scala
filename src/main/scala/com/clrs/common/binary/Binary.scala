@@ -3,7 +3,7 @@ package com.clrs.common.binary
 case class Binary(bits: Seq[Byte]) {
 
   lazy val intValue: Long =
-    (bits.reverse.map(_.toLong), Binary.powersOfTwo).zipped.map(_ * _).sum
+    bits.reverse.map(_.toLong).lazyZip(Binary.powersOfTwo).map(_ * _).sum
 
   def +(that: Binary): Binary =
     Binary {

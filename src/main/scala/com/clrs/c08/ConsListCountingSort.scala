@@ -7,7 +7,7 @@ import scala.collection.mutable.ArrayBuffer
 /**
   * Counting sort for cons lists.
   *
-  * @author Nader Hadji Ghanbari
+  * @author Nader Ghanbari
   */
 object ConsListCountingSort {
 

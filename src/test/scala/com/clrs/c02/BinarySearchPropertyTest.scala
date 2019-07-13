@@ -1,7 +1,8 @@
 package com.clrs.c02
 
 import org.scalacheck.Arbitrary
-import org.scalatest.{Matchers, OptionValues, PropSpec}
+import org.scalatest.propspec.AnyPropSpec
+import org.scalatest.{Matchers, OptionValues}
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
 import scala.collection.IndexedSeq
@@ -13,7 +14,7 @@ import scala.language.higherKinds
   * @tparam T Parametric type of the elements.
   */
 abstract class BinarySearchPropertyTest[T: Ordering: Arbitrary](alg: Search[IndexedSeq])
-    extends PropSpec
+    extends AnyPropSpec
     with Matchers
     with OptionValues
     with ScalaCheckPropertyChecks {

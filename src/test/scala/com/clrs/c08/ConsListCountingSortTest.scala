@@ -1,9 +1,10 @@
 package com.clrs.c08
 
 import com.clrs.common.SatelliteObject
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.Matchers
+import org.scalatest.wordspec.AnyWordSpec
 
-object ConsListCountingSortTest extends WordSpec with Matchers {
+object ConsListCountingSortTest extends AnyWordSpec with Matchers {
 
   "ConsListCountingSortTest.countingSort" when {
     "k = 5" should {

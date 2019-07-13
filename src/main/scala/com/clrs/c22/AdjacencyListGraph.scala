@@ -42,4 +42,4 @@ case class GeneratingAdjacencyListGraph[V](adj: V => Seq[V]) extends AdjacencyLi
   * @param adj Generating function.
   * @tparam V Parametric type of vertices.
   */
-case class LazyAdjacencyListGraph[V](adj: V => Stream[V]) extends AdjacencyListGraph[V]
+case class LazyAdjacencyListGraph[V](adj: V => LazyList[V]) extends AdjacencyListGraph[V]

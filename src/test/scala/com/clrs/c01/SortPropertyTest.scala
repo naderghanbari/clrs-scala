@@ -2,7 +2,8 @@ package com.clrs.c01
 
 import org.scalacheck.Arbitrary
 import org.scalatest.enablers.Sortable
-import org.scalatest.{Matchers, PropSpec}
+import org.scalatest.Matchers
+import org.scalatest.propspec.AnyPropSpec
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
 import scala.language.higherKinds
@@ -19,7 +20,7 @@ import scala.language.higherKinds
 abstract class SortPropertyTest[T: Ordering, C[_] <: Iterable[_]](alg: Sort[C])(
   implicit arb: Arbitrary[C[T]],
   sortable: Sortable[C[T]]
-) extends PropSpec
+) extends AnyPropSpec
     with Matchers
     with ScalaCheckPropertyChecks {
 

@@ -3,10 +3,11 @@ package com.clrs.c02
 import com.clrs.c02.Horner.polynomialEval
 import org.scalacheck.Arbitrary.arbitrary
 import org.scalacheck.Gen.nonEmptyListOf
-import org.scalatest.{Matchers, PropSpec}
+import org.scalatest.Matchers
+import org.scalatest.propspec.AnyPropSpec
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
-class HornerTest extends PropSpec with Matchers with ScalaCheckPropertyChecks {
+class HornerTest extends AnyPropSpec with Matchers with ScalaCheckPropertyChecks {
 
   val polyGen = nonEmptyListOf(arbitrary[Double])
 

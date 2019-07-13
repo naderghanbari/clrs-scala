@@ -1,9 +1,10 @@
 package com.clrs.c22
 
 import com.clrs.common.SatelliteObject
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.Matchers
+import org.scalatest.flatspec.AnyFlatSpec
 
-class ConsListBreadthFirstSearchTest extends FlatSpec with Matchers {
+class ConsListBreadthFirstSearchTest extends AnyFlatSpec with Matchers {
 
   val A = SatelliteObject("A", "Node A")
   val B = SatelliteObject("B", "Node B")
@@ -24,13 +25,13 @@ class ConsListBreadthFirstSearchTest extends FlatSpec with Matchers {
   val BFS = ConsListBreadthFirstSearch.bfs(HashMapAdjacencyListGraph(adj))(_)
 
   "ConsListBreadthFirstSearch" should "return a traversal in the expected order if A is the source node " in {
-    val result = BFS(A)
+    val result          = BFS(A)
     val expectedVisited = Seq("A", "B", "C", "D", "E")
     result.map(_.key) should contain theSameElementsInOrderAs expectedVisited
   }
 
   "ConsListBreadthFirstSearch" should "return a traversal in the expected order if F is the source node " in {
-    val result = BFS(F)
+    val result          = BFS(F)
     val expectedVisited = Seq("F")
     result.map(_.key) should contain theSameElementsInOrderAs expectedVisited
   }

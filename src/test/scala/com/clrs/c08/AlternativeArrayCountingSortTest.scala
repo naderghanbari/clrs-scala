@@ -1,9 +1,10 @@
 package com.clrs.c08
 
 import com.clrs.common.SatelliteObject
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.Matchers
+import org.scalatest.wordspec.AnyWordSpec
 
-class AlternativeArrayCountingSortTest extends WordSpec with Matchers {
+class AlternativeArrayCountingSortTest extends AnyWordSpec with Matchers {
 
   "AlternativeArrayCountingSort.countingSort" when {
     "k = 5" should {

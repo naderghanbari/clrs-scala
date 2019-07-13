@@ -1,8 +1,9 @@
 package com.clrs.apc
 
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.Matchers
+import org.scalatest.wordspec.AnyWordSpec
 
-class FractionalBiasedCoinTest extends WordSpec with Matchers {
+class FractionalBiasedCoinTest extends AnyWordSpec with Matchers {
 
   "FractionalBiasedCoin" when {
     "hugely in favor of heads" should {

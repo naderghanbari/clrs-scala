@@ -2,7 +2,8 @@ package com.clrs.c04
 
 import org.scalacheck.Arbitrary.arbitrary
 import org.scalacheck.Gen
-import org.scalatest.{Matchers, OptionValues, PropSpec}
+import org.scalatest.propspec.AnyPropSpec
+import org.scalatest.{Matchers, OptionValues}
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
 import scala.language.higherKinds
@@ -12,7 +13,7 @@ import scala.language.higherKinds
   * @param alg Maximum sub array class.
   */
 abstract class MaxSubSeqPropertyTest(alg: MaxSubSeq)
-    extends PropSpec
+    extends AnyPropSpec
     with Matchers
     with ScalaCheckPropertyChecks
     with OptionValues {
