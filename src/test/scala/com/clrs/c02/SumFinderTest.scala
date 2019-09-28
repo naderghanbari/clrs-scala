@@ -1,7 +1,8 @@
 package com.clrs.c02
 
 import org.scalatest.wordspec.AnyWordSpec
-import org.scalatest.{Matchers, OptionValues}
+import org.scalatest.OptionValues
+import org.scalatest.matchers.should.Matchers
 
 class SumFinderTest extends AnyWordSpec with Matchers with OptionValues {
 

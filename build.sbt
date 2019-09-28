@@ -1,12 +1,13 @@
-name         := "clrs-scala"
-version      := "0.1"
-scalaVersion := "2.13.0"
+name    := "clrs-scala"
+version := "0.1"
 
-scalacOptions += "-deprecation"
+ThisBuild / scalaVersion := "2.13.1"
+
+scalacOptions ++= List("-deprecation")
 
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-parallel-collections" % "0.2.0",
-  "org.scalacheck"         %% "scalacheck"                 % "1.14.0" % Test,
-  "org.scalatest"          %% "scalatest"                  % "3.1.0-SNAP13" % Test,
-  "org.scalatestplus"      %% "scalatestplus-scalacheck"   % "1.0.0-SNAP8" % Test,
+  "org.scalacheck"         %% "scalacheck"                 % "1.14.2" % Test,
+  "org.scalatest"          %% "scalatest"                  % "3.1.0-RC3" % Test,
+  "org.scalatestplus"      %% "scalatestplus-scalacheck"   % "3.1.0.0-RC2" % Test,
 )

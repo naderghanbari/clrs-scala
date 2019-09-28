@@ -2,11 +2,10 @@ package com.clrs.c01
 
 import org.scalacheck.Arbitrary
 import org.scalatest.enablers.Sortable
-import org.scalatest.Matchers
 import org.scalatest.propspec.AnyPropSpec
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
-import scala.language.higherKinds
+import org.scalatest.matchers.should.Matchers
 
 /** Abstract property-driven tests for sorting classes conforming to Sort.
   *

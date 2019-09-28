@@ -3,10 +3,10 @@ package com.clrs.c04
 import org.scalacheck.Arbitrary.arbitrary
 import org.scalacheck.Gen
 import org.scalatest.propspec.AnyPropSpec
-import org.scalatest.{Matchers, OptionValues}
+import org.scalatest.OptionValues
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
-import scala.language.higherKinds
+import org.scalatest.matchers.should.Matchers
 
 /** Abstract property-driven tests for maximum sub-array finders.
   *

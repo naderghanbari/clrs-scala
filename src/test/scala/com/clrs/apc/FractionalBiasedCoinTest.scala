@@ -1,7 +1,7 @@
 package com.clrs.apc
 
-import org.scalatest.Matchers
 import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
 
 class FractionalBiasedCoinTest extends AnyWordSpec with Matchers {
 

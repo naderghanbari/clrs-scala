@@ -1,8 +1,8 @@
 package com.clrs.c02
 
 import com.clrs.common.binary.Binary
-import org.scalatest.Matchers
 import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
 
 class BinaryAdderTest extends AnyWordSpec with Matchers {
 

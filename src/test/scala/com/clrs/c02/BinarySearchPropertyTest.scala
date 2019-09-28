@@ -2,11 +2,11 @@ package com.clrs.c02
 
 import org.scalacheck.Arbitrary
 import org.scalatest.propspec.AnyPropSpec
-import org.scalatest.{Matchers, OptionValues}
+import org.scalatest.OptionValues
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
 import scala.collection.IndexedSeq
-import scala.language.higherKinds
+import org.scalatest.matchers.should.Matchers
 
 /** Abstract property-driven tests for binary searches classes conforming to Search.
   *

@@ -1,8 +1,8 @@
 package com.clrs.c08
 
 import com.clrs.common.SatelliteObject
-import org.scalatest.Matchers
 import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers
 
 object ConsListCountingSortTest extends AnyWordSpec with Matchers {
 

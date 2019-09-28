@@ -3,9 +3,9 @@ package com.clrs.c02
 import com.clrs.c02.Horner.polynomialEval
 import org.scalacheck.Arbitrary.arbitrary
 import org.scalacheck.Gen.nonEmptyListOf
-import org.scalatest.Matchers
 import org.scalatest.propspec.AnyPropSpec
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
+import org.scalatest.matchers.should.Matchers
 
 class HornerTest extends AnyPropSpec with Matchers with ScalaCheckPropertyChecks {
 

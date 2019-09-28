@@ -1,7 +1,5 @@
 package com.clrs.c01
 
-import scala.language.higherKinds
-
 /** Sorting problem.
   *
   * Chapter 1, Section 1.1., page 5

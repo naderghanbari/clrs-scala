@@ -1,7 +1,6 @@
 package com.clrs.c04
 
 import scala.collection.IndexedSeq
-import scala.language.higherKinds
 
 /** Maximum sub-array problem.
   * Chapter 4, Section 4.1, Page 68

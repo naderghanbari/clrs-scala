@@ -1,7 +1,5 @@
 package com.clrs.c02
 
-import scala.language.higherKinds
-
 import com.clrs.common.Index
 
 /** Searching Problem

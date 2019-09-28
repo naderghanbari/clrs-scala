@@ -1,8 +1,8 @@
 package com.clrs.c22
 
 import com.clrs.common.SatelliteObject
-import org.scalatest.Matchers
 import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 class BreadthFirstSearchTest extends AnyFlatSpec with Matchers {
 

@@ -1,11 +1,10 @@
 package com.clrs.c02
 
 import com.clrs.c02.InversionCount.inversionCount
-import org.scalatest.Matchers
 import org.scalatest.propspec.AnyPropSpec
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
-import scala.language.higherKinds
+import org.scalatest.matchers.should.Matchers
 
 /** Inversion count tests.
   * Chapter 2, Problem 2.4, Parts a and b, Pages 41, 42
