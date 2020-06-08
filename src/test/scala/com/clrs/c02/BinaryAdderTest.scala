@@ -9,9 +9,9 @@ class BinaryAdderTest extends AnyWordSpec with Matchers {
   "Binary Adder" should {
 
     "add binary numbers correctly" in {
-      val twelve = Binary("1100")
-      val three  = Binary("011")
-      (twelve + three).intValue shouldEqual 15
+      val twelve = Binary.from("1100")
+      val three  = Binary.from("011")
+      (twelve + three).longValue shouldEqual 15
     }
 
   }

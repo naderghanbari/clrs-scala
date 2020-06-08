@@ -11,3 +11,5 @@ libraryDependencies ++= Seq(
   "org.scalatest"          %% "scalatest"                  % "3.1.2" % Test,
   "org.scalatestplus"      %% "scalatestplus-scalacheck"   % "3.1.0.0-RC2" % Test,
 )
+
+Test / logBuffered := false
