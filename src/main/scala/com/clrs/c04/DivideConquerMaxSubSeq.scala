@@ -27,8 +27,8 @@ object DivideConquerMaxSubSeq extends MaxSubSeq {
       else right
     }
 
-  private def findMaxCrossing[T](a: IndexedSeq[T], l: Index, m: Index, h: Index)(
-    implicit num: Numeric[T]
+  private def findMaxCrossing[T](a: IndexedSeq[T], l: Index, m: Index, h: Index)(implicit
+    num: Numeric[T]
   ): SubSequence[T] = {
     val rollingMax   = (range: Range) => range.view.map(a).scan(num.zero)(_ + _).drop(1).zipWithIndex.maxBy(_._1)
     val (lSum, lMax) = rollingMax(m to l by -1)

@@ -1,7 +1,6 @@
 package com.clrs.c10.s1.exercises.e10_1_5
 
-/**
-  * Exercise 10.1-5
+/** Exercise 10.1-5
   *
   * Dequeue
   *
@@ -13,6 +12,7 @@ class Dequeue(n: Int) {
   assert(n > 1)
 
   private val Q: Array[Int] = Array.ofDim[Int](n)
+
   private var head: Int = 0
   private var tail: Int = 0
 
@@ -20,8 +20,7 @@ class Dequeue(n: Int) {
 
   def isFull: Boolean = Math.floorMod(head - tail, n) == 1
 
-  /**
-    * O(1)
+  /** O(1)
     * Enqueue a new item..
     *
     * @param x New item to be enqueued.
@@ -34,8 +33,7 @@ class Dequeue(n: Int) {
       else tail = tail + 1
     }
 
-  /**
-    * O(1)
+  /** O(1)
     * Dequeue oldest item in the queue, i.e. head.
     *
     * @return Oldest item in the queue.

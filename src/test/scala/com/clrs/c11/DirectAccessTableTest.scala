@@ -3,12 +3,12 @@ package com.clrs.c11
 import com.clrs.common.{Index, SatelliteObject}
 
 object DirectAccessTableTest extends App {
-  val m = 10
+  val m     = 10
   val table = new DirectAccessTable[SatelliteObject[Index]](m)
 
-  val two = SatelliteObject(2, "Satellite 2")
+  val two   = SatelliteObject(2, "Satellite 2")
   val three = SatelliteObject(3, "Satellite 3")
-  val five = SatelliteObject(5, "Satellite 5")
+  val five  = SatelliteObject(5, "Satellite 5")
   val eight = SatelliteObject(8, "Satellite 8")
 
   println("SEARCH 2")

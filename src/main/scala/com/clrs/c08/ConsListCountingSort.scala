@@ -4,15 +4,13 @@ import com.clrs.common.IndexKey
 
 import scala.collection.mutable.ArrayBuffer
 
-/**
-  * Counting sort for cons lists.
+/** Counting sort for cons lists.
   *
   * @author Nader Ghanbari
   */
 object ConsListCountingSort {
 
-  /**
-    * Stable counting sort for cons lists.
+  /** Stable counting sort for cons lists.
     *
     * Not the most efficient algorithm, relies on `Array#toList` and `List#flatten`
     *

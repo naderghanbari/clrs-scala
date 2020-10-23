@@ -1,15 +1,13 @@
 package com.clrs.common
 
-/**
-  * Objects having this trait will have an accessible key.
+/** Objects having this trait will have an accessible key.
   *
   * @tparam K Key type.
   * @author Nader Ghanbari
   */
 trait HasKey[+K] {
 
-  /**
-    * Key of this object.
+  /** Key of this object.
     *
     * @return Key.
     */

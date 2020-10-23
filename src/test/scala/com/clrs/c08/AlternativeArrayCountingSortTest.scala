@@ -27,4 +27,3 @@ class AlternativeArrayCountingSortTest extends AnyWordSpec with Matchers {
   }
 
 }
-

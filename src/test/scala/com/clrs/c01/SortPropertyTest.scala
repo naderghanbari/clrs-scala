@@ -16,8 +16,8 @@ import org.scalatest.matchers.should.Matchers
   * @param arb Implicit arbitrary for generating random sequences of elements.
   * @param sortable Implicit enabler for ScalaTest's `sorted` matcher.
   */
-abstract class SortPropertyTest[T: Ordering, C[_] <: Iterable[_]](alg: Sort[C])(
-  implicit arb: Arbitrary[C[T]],
+abstract class SortPropertyTest[T: Ordering, C[_] <: Iterable[_]](alg: Sort[C])(implicit
+  arb: Arbitrary[C[T]],
   sortable: Sortable[C[T]]
 ) extends AnyPropSpec
     with Matchers

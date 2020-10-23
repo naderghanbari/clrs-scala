@@ -15,7 +15,7 @@ object MutableInsertionSort extends Sort[mutable.IndexedSeq] {
     *
     * @param a Array of n numbers < a₁, a₂, ..., an >
     * @return Sorted sequence.
-    * */
+    */
   def insertionSort[T: Ordering](a: mutable.IndexedSeq[T], p: Index, r: Index): Unit =
     for (j <- p to r) {
       val key = a(j)

@@ -14,8 +14,8 @@ import org.scalatest.matchers.should.Matchers
   * @tparam C Parametric type of the collection.
   * @param arb Implicit arbitrary for generating random sequences of elements.
   */
-abstract class LinearSearchPropertyTest[T: Ordering: Arbitrary, C[_] <: Iterable[_]](alg: Search[C])(
-  implicit arb: Arbitrary[C[T]]
+abstract class LinearSearchPropertyTest[T: Ordering: Arbitrary, C[_] <: Iterable[_]](alg: Search[C])(implicit
+  arb: Arbitrary[C[T]]
 ) extends AnyPropSpec
     with Matchers
     with ScalaCheckPropertyChecks {

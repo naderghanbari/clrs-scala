@@ -4,12 +4,13 @@ import com.clrs.common.SatelliteObject
 
 object ChainedHastTableTest extends App {
   val m = 10
+
   implicit val divisionHashFunction = new HashFunction.DivisionHashFunction(m)
 
   val table = new ChainedHashTable[Int, SatelliteObject[Int]](m)
 
-  val twelve = SatelliteObject(12, "Satellite 12")
-  val eighteen = SatelliteObject(18, "Satellite 18")
+  val twelve    = SatelliteObject(12, "Satellite 12")
+  val eighteen  = SatelliteObject(18, "Satellite 18")
   val twentyTwo = SatelliteObject(22, "Satellite 22")
   val thirtyTwo = SatelliteObject(32, "Satellite1 32")
 

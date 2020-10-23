@@ -3,14 +3,14 @@ package com.clrs.c11
 import com.clrs.common.SatelliteObject
 
 object NaiveHastTableTest extends App {
-  val m = 10
+  val m                             = 10
   implicit val divisionHashFunction = new HashFunction.DivisionHashFunction(m)
 
   val table = new NaiveHashTable[Int, SatelliteObject[Int]](m)
 
-  val twelve = SatelliteObject(12, "Satellite 12")
+  val twelve   = SatelliteObject(12, "Satellite 12")
   val thirteen = SatelliteObject(13, "Satellite 13")
-  val fifteen = SatelliteObject(15, "Satellite1 15")
+  val fifteen  = SatelliteObject(15, "Satellite1 15")
   val eighteen = SatelliteObject(18, "Satellite 18")
 
   println("SEARCH 12")

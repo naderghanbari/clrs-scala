@@ -17,7 +17,7 @@ class Matrix[T: Numeric](elems: Array[Array[T]], rows: Int, cols: Int) {
 
   @inline final def apply(i: Index, j: Index): T = elems(i)(j)
 
-  @inline final def update(i: Index, j: Index, elem: T) = elems(i)(j) = elem
+  @inline final def update(i: Index, j: Index, elem: T): Unit = elems(i)(j) = elem
 }
 
 case class SquareMatrix[T: Numeric](elems: Array[Array[T]], size: Int) extends Matrix(elems, size, size)

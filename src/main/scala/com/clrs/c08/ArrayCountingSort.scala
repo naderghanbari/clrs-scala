@@ -7,8 +7,7 @@ package com.clrs.c08
   */
 object ArrayCountingSort {
 
-  /**
-    * Stable counting sort for arrays of integers.
+  /** Stable counting sort for arrays of integers.
     *
     * Is not in-place, puts sorted numbers in an array provided as an input (side effect).
     *

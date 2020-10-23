@@ -2,8 +2,7 @@ package com.clrs.c22
 
 object ConsListBreadthFirstSearch {
 
-  /**
-    * BFS using cons list and fold left. Not tail recursive!
+  /** BFS using cons list and fold left. Not tail recursive!
     *
     * @param g Adjacency list graph.
     * @param s source node.

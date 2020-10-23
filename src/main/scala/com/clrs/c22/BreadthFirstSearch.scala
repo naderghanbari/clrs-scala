@@ -6,8 +6,7 @@ import scala.collection.mutable.{ArrayBuffer, Map => MutableHashMap}
 
 object BreadthFirstSearch {
 
-  /**
-    * Represents a traversal suitable for an imperative style BFS.
+  /** Represents a traversal suitable for an imperative style BFS.
     *
     * @param visited Visited nodes.
     * @param level   Level map.
@@ -16,8 +15,7 @@ object BreadthFirstSearch {
     */
   case class Traversal[V](visited: Seq[V], level: Map[V, Int], parent: Map[V, Option[V]])
 
-  /**
-    * BFS using mutable array buffers and mutable hash maps.
+  /** BFS using mutable array buffers and mutable hash maps.
     * Instead of a while loop, a tail recursive closure is being used.
     *
     * @param g Adjacency list graph.
@@ -27,14 +25,15 @@ object BreadthFirstSearch {
     */
   def bfs[V](g: AdjacencyListGraph[V])(s: V): Traversal[V] = {
     val visited = ArrayBuffer(s)
-    val level = MutableHashMap(s -> 0)
-    val parent = MutableHashMap(s -> Option.empty[V])
-    val visit = (i: Int, p: V) => (curr: V) => {
-      level(curr) = i
-      parent(curr) = Some(p)
-      visited.append(curr)
-      curr
-    }
+    val level   = MutableHashMap(s -> 0)
+    val parent  = MutableHashMap(s -> Option.empty[V])
+    val visit = (i: Int, p: V) =>
+      (curr: V) => {
+        level(curr) = i
+        parent(curr) = Some(p)
+        visited.append(curr)
+        curr
+      }
 
     @tailrec
     def iter(i: Int, front: Seq[V]): Unit =

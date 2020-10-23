@@ -14,10 +14,9 @@ case class Binary private (bits: Seq[Byte]) {
       val res =
         bits.reverse
           .zipAll(that.bits.reverse, 0.toByte, 0.toByte)
-          .scanLeft(0.toByte -> 0.toByte) {
-            case ((_, carry), (x, y)) =>
-              val sum = x + y + carry
-              (sum % 2).toByte -> (sum / 2).toByte
+          .scanLeft(0.toByte -> 0.toByte) { case ((_, carry), (x, y)) =>
+            val sum = x + y + carry
+            (sum % 2).toByte -> (sum / 2).toByte
           }
           .drop(1)
       (res.head._2 +: res.map(_._1)).dropWhile(_ == 0)

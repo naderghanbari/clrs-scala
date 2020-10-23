@@ -1,7 +1,6 @@
 package com.clrs.c10.s1
 
-/**
-  * Queue of n integers backed by an array.
+/** Queue of n integers backed by an array.
   *
   * NOTE array index `0` corresponds to index `1` in the book, and so on.
   *
@@ -11,15 +10,14 @@ class Queue(n: Int) {
   assert(n > 1)
 
   private val Q: Array[Int] = Array.ofDim[Int](n)
-  private var head: Int = 0
-  private var tail: Int = 0
+  private var head: Int     = 0
+  private var tail: Int     = 0
 
   def isEmpty: Boolean = head == tail
 
   def isFull: Boolean = Math.floorMod(head - tail, n) == 1
 
-  /**
-    * O(1)
+  /** O(1)
     * Enqueue a new item..
     *
     * @param x New item to be enqueued.
@@ -32,8 +30,7 @@ class Queue(n: Int) {
       else tail = tail + 1
     }
 
-  /**
-    * O(1)
+  /** O(1)
     * Dequeue oldest item in the queue, i.e. head.
     *
     * @return Oldest item in the queue.

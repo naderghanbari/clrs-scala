@@ -15,7 +15,7 @@ object MutableBubbleSort extends Sort[mutable.IndexedSeq] {
     *
     * @param a Array of n numbers < a₁, a₂, ..., an >
     * @return Sorted sequence.
-    * */
+    */
   def bubbleSort[T: Ordering](a: mutable.IndexedSeq[T]): Unit =
     for (i <- 0 until a.length - 1)
       for (j <- a.length - 1 to i + 1 by -1 if a(j) < a(j - 1))

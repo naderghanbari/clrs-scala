@@ -12,8 +12,7 @@ case class SatelliteObject[+K](key: K, satelliteStringField: String) extends Has
 
 object SatelliteObject {
 
-  /**
-    * Ordering which only takes key into account, which is all we want.
+  /** Ordering which only takes key into account, which is all we want.
     *
     * @tparam K Type of k, which should have an ordering.
     * @return

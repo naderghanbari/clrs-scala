@@ -30,8 +30,8 @@ abstract class MatrixMultiplicationPropertyTest(alg: MatrixMultiplication)
     forAll(squareMatrixGen[Int]) { A =>
       val zeros  = SquareMatrix.zeros[Int](A.size)
       val result = alg.matMul(A, zeros)
-      result.size  shouldEqual zeros.size
-      result.elems should contain theSameElementsAs zeros.elems
+      result.size shouldEqual zeros.size
+      result.elems     should contain theSameElementsAs zeros.elems
     }
   }
 
@@ -39,8 +39,8 @@ abstract class MatrixMultiplicationPropertyTest(alg: MatrixMultiplication)
     forAll(squareMatrixGen[Int]) { A =>
       val I      = SquareMatrix.identity[Int](A.size)
       val result = alg.matMul(A, I)
-      result.size  shouldEqual A.size
-      result.elems should contain theSameElementsAs A.elems
+      result.size shouldEqual A.size
+      result.elems     should contain theSameElementsAs A.elems
     }
   }
 
@@ -48,14 +48,14 @@ abstract class MatrixMultiplicationPropertyTest(alg: MatrixMultiplication)
     forAll(squareMatrixGen[Int]) { A =>
       val I      = SquareMatrix.identity[Int](A.size)
       val result = alg.matMul(I, A)
-      result.size  shouldEqual A.size
-      result.elems should contain theSameElementsAs A.elems
+      result.size shouldEqual A.size
+      result.elems     should contain theSameElementsAs A.elems
     }
   }
 
   property("(AB)C = A(BC) [Left identity]") {
     forAll(Gen.listOfN(3, squareMatrixGenN[Int](10))) { ms =>
-      val left = ms.reduceLeft[SquareMatrix[Int]](alg.matMul)
+      val left  = ms.reduceLeft[SquareMatrix[Int]](alg.matMul)
       val right = ms.reduceRight[SquareMatrix[Int]](alg.matMul)
       left.elems should contain theSameElementsAs right.elems
     }
@@ -63,7 +63,7 @@ abstract class MatrixMultiplicationPropertyTest(alg: MatrixMultiplication)
 
   property("*/ = \\* [Generalized associativity]") {
     forAll(Gen.nonEmptyListOf(squareMatrixGenN[Int](4))) { ms =>
-      val left = ms.reduceLeft[SquareMatrix[Int]](alg.matMul)
+      val left  = ms.reduceLeft[SquareMatrix[Int]](alg.matMul)
       val right = ms.reduceRight[SquareMatrix[Int]](alg.matMul)
       left.elems should contain theSameElementsAs right.elems
     }
